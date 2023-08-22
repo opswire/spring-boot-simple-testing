@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All people</title>
+</head>
+<body>
+    <div>
+        <h3>
+            <a th:href="@{/people/new}">Add person</a>
+        </h3>
+    </div>
+    <div th:each="person : ${people}">
+        <ul>
+            <li>
+                <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName()}">
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
